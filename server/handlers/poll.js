@@ -123,7 +123,7 @@ exports.vote = async function(req, res, next){
             })
 
             if(poll.voted.filter( user => poll.user.toString() === userId) <= 0){
-                poll.voted.push(userId)
+                poll.voted.push(poll._id)
                 poll.vote = vote
                 await poll.save()
 
