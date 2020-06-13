@@ -4,8 +4,7 @@ import decode from 'jwt-decode' // to decode the jwt
 
 import {store} from '../store'
 import { setCurrentUser, setToken, addError, removeError } from '../store/actions'
-
-
+import Authentication from '../components/Authentication'
 
 if(localStorage.jwtToken){
     setToken(localStorage.jwtToken)
@@ -23,6 +22,9 @@ const App = () =>(
     <Provider store={store}>
         <div>
             <h1>Voting App</h1>
+            <hr/>
+            <h2>Login</h2>
+            <Authentication authType={'login'}/>
         </div>
     </Provider>
 )
